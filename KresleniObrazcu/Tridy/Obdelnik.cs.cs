@@ -9,12 +9,9 @@ namespace KresleniObrazcu.Tridy
 {
     public class Obdelnik : Obrazec
     {
-        public Obdelnik(double x, double y, double tloustkaCary, Brush vypln)
+        public Obdelnik(double x, double y, double tloustkaCary, Brush vypln) : base(x, y, tloustkaCary, vypln)
         {
-            X = x;
-            Y = y;
-            TloustkaCary = tloustkaCary;
-            Vypln = vypln;
+
         }
         public override void Vykresli(Canvas platno)
         {

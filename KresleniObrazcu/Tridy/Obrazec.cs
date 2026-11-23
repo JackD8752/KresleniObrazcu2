@@ -6,7 +6,7 @@ using System.Windows.Media;
 
 namespace KresleniObrazcu.Tridy
 {
-    public abstract class Obrazec//TEST
+    public abstract class Obrazec
     {
         public double X { get; protected set; }
         public double Y { get; protected set; }
@@ -15,5 +15,13 @@ namespace KresleniObrazcu.Tridy
         public Brush Vypln { get; protected set; }
 
         public abstract void Vykresli(Canvas platno);
+
+        public Obrazec(double x, double y, double tloustkaCary, Brush vypln)
+        {
+            X = x;
+            Y = y;
+            TloustkaCary = tloustkaCary;
+            Vypln = vypln;
+        }
     }
 }

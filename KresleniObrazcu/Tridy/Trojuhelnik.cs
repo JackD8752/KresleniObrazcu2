@@ -10,12 +10,9 @@ namespace KresleniObrazcu.Tridy
 {
     public class Trojuhelnik : Obrazec
     {
-        public Trojuhelnik(double x, double y, double tloustkaCary, Brush vypln)
+        public Trojuhelnik(double x, double y, double tloustkaCary, Brush vypln) : base(x, y, tloustkaCary, vypln)
         {
-            X = x;
-            Y = y;
-            TloustkaCary = tloustkaCary;
-            Vypln = vypln;
+
         }
         public override void Vykresli(Canvas platno)
         {

@@ -14,6 +14,8 @@ namespace KresleniObrazcu.Tridy
         public double TloustkaCary { get; protected set; }
         public Brush Vypln { get; protected set; }
 
+        public (int x, int y) Rozmery { get; set; }
+
         public abstract void Vykresli(Canvas platno);
 
         public Obrazec(double x, double y, double tloustkaCary, Brush vypln)

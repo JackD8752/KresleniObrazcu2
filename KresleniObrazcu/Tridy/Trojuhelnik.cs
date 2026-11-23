@@ -20,9 +20,9 @@ namespace KresleniObrazcu.Tridy
             {
                 Points = new PointCollection()
                 {
-                    new Point(50, 0),
-                    new Point(0, 80),
-                    new Point(100, 80)
+                    new Point(Rozmery.x/2, 0),
+                    new Point(0, Rozmery.y),
+                    new Point(Rozmery.x, Rozmery.y)
                 },
 
                 Stroke = Brushes.Black,

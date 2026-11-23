@@ -38,60 +38,52 @@ namespace KresleniObrazcu
 
             Obrazec obrazec;
 
-            switch (typ)
-            {
-                case 0:
-                    obrazec = new Obdelnik();
-                    break;
-
-                case 1:
-                    obrazec = new Elipsa();
-                    break;
-
-                case 2:
-                    obrazec = new Trojuhelnik();
-                    break;
-
-                default:
-                    return;
-            }
-
-            // Nastavení souřadnic
-            obrazec.X = x;
-            obrazec.Y = y;
-
             // Nastavení tloušťky čáry
             ComboBoxItem polozkaTloustka =
                 (ComboBoxItem)cmbTloustka.SelectedItem;
 
-            obrazec.TloustkaCary =
-                double.Parse(polozkaTloustka.Content.ToString()!);
+            SolidColorBrush barvicka;
 
-            // Nastavení barvy výplně
-            int barva = cmbVypln.SelectedIndex;
-
-            switch (barva)
+            switch (cmbVypln.SelectedIndex)
             {
                 case 0:
-                    obrazec.Vypln = Brushes.LightBlue;
+                    barvicka = Brushes.LightBlue;
                     break;
 
                 case 1:
-                    obrazec.Vypln = Brushes.LightGreen;
+                    barvicka = Brushes.LightGreen;
                     break;
 
                 case 2:
-                    obrazec.Vypln = Brushes.Yellow;
+                    barvicka = Brushes.Yellow;
                     break;
 
                 case 3:
-                    obrazec.Vypln = Brushes.LightCoral;
+                    barvicka = Brushes.LightCoral;
                     break;
 
                 default:
-                    obrazec.Vypln = Brushes.Transparent;
+                    barvicka = Brushes.Transparent;
                     break;
             }
+
+            switch (typ)
+            {
+                case 0:
+                    obrazec = new Obdelnik(x, y, double.Parse(polozkaTloustka.Content.ToString()!), barvicka);
+                    break;
+
+                case 1:
+                    obrazec = new Elipsa(x, y, double.Parse(polozkaTloustka.Content.ToString()!), barvicka);
+                    break;
+
+                case 2:
+                    obrazec = new Trojuhelnik(x, y, double.Parse(polozkaTloustka.Content.ToString()!), barvicka);
+                    break;
+
+                default:
+                    return;
+            }            
 
             // Vykreslení obrazce
             obrazec.Vykresli(platno);

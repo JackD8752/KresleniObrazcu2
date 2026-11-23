@@ -39,7 +39,7 @@
                 <ComboBoxItem Content="Obdélník"/>
                 <ComboBoxItem Content="Elipsa"/>
                 <ComboBoxItem Content="Trojúhelník"/>
-
+                <ComboBoxItem Content="Kruh"/>
             </ComboBox>
 
             <TextBlock Text="Tloušťka:"
@@ -77,11 +77,6 @@
                     Width="100"
                     Margin="20,0,0,0"
                     Click="BtnSmazat_Click"/>
-            <Button Content="Test vše"
-        Width="100"
-        Margin="20,0,0,0"
-        Click="BtnSmazat_Click"/>
-
         </StackPanel>
 
         <!-- Kreslicí plocha -->

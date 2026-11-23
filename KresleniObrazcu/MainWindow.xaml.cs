@@ -80,6 +80,9 @@ namespace KresleniObrazcu
                 case 2:
                     obrazec = new Trojuhelnik(x, y, double.Parse(polozkaTloustka.Content.ToString()!), barvicka);
                     break;
+                case 3:
+                    obrazec = new Kruh(x, y, double.Parse(polozkaTloustka.Content.ToString()!), barvicka);
+                    break;
 
                 default:
                     return;
